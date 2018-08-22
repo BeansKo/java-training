@@ -39,7 +39,7 @@ public class App {
 		zf.zf();
 		
 		//使用反射代替
-		Class clazz = Class.forName(className);
+		Class<?> clazz = Class.forName(className);
 		
 		Object obj = clazz.newInstance();
 		zf = (ZF)obj;

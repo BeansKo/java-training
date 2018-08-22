@@ -6,7 +6,7 @@ package com.beans.ko.java.training.reflect;
 public class ClassUse {
 	public static void main(String[] args) throws ClassNotFoundException {
 		//返回类对象
-		Class clazz = Class.forName("com.beans.ko.java.training.entity.Person");
+		Class<?> clazz = Class.forName("com.beans.ko.java.training.entity.Person");
 		int i = clazz.getModifiers();
 		System.out.println(i);
 		System.out.println(clazz.getName());
