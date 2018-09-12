@@ -33,11 +33,14 @@ public class ThreadFour {
 class RunnableFour implements Runnable{
 	//一定是线程共享变量，没有必要专门去写一个对象用来被锁，一般会去锁this
 	public Object obj = new Object();
+	public int i=1;
 	@Override
 	public void run() {
 		synchronized (this) {
 			System.out.println(Thread.currentThread().getName()+"_获得锁");
+			System.out.println(Thread.currentThread().getName()+"_"+i);
 			System.out.println(Thread.currentThread().getName()+"_放弃锁");
+			i++;
 		}
 
 	}
