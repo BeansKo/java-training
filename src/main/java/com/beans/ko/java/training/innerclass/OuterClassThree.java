@@ -9,11 +9,12 @@ package com.beans.ko.java.training.innerclass;
  *5.如果创建对象能不能访问静态内部类的非静态成员？可以，创建对象就可以
  *6.如何创建静态内部类的对象?new 静态内部类构造器就可以，由此可以，静态内部类不依附外部类对象存在，不管有没有外部类对象，静态内部类都可以加载构建对象
  *7.不是外部类的其他类如何构建静态内部类对象？new 静态内部类构造器就可以
- *总结：静态内部类不依附外部类对象存在；静态内部类作为外部类的静态成员存在，可以直接掉用静态部分；创建对象比较简单；支持集成；静态元素可以通过 外部类名.属性名||属性名 调用
+ *总结：静态内部类不依附外部类对象存在；静态内部类作为外部类的静态成员存在，可以直接掉用静态部分；创建对象比较简单；支持继承；静态元素可以通过 外部类名.属性名||属性名 调用
  */
 public class OuterClassThree {
 	public static void main(String[] args) {
 		new OuterClassThree().show();
+		System.out.println(new InnerClassThree().iage);
 	}
 	
 	public void show(){
