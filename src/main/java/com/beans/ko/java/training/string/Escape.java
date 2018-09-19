@@ -12,5 +12,25 @@ public class Escape {
 		result = StringEscapeUtils.unescapeJava(result);
 		System.out.println(result);
 	}
+	
+	public static String GetSubString(String oldStr, int length) {
+		try {
+			if (oldStr == null) {
+				return "";
+			}
+			oldStr = oldStr.trim();
+			if (oldStr.length() > length) {
+				String spt = oldStr.substring(length, length + 1);
+				oldStr = oldStr.substring(0, length);
+				if (!spt.equals(" ") && oldStr.lastIndexOf(" ") > 0) {
+					oldStr = oldStr.substring(0, oldStr.lastIndexOf(" ") + 1);
+				}
+			}
+			return oldStr.trim();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return oldStr.trim();
+	}
 
 }
