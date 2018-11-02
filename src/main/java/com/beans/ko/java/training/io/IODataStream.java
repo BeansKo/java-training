@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * 第十一个
  * 数据流
  *	1.DataInputStream
  *	2.DataOutputStream
@@ -37,6 +38,8 @@ public class IODataStream {
 			boolean b2 = dis.readBoolean();
 			double d1 = dis.readDouble();
 			System.out.println(dis.readUTF());
+			System.out.println(b1);
+			System.out.println(d1);
 			if(b2){
 				System.out.println(b2);
 			}
