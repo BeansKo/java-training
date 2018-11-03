@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
+ * 第七个
  * 字符输入流 FileReader
  * 	字节流去读写汉子，产生乱码
  * 	原因：汉子作为字符存在，被分割成两个字节读取，故造成了乱码

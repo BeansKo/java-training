@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * 第六个
  * 文件复制加速
  *	影响复制的因素,增大一次操作文件的字节数
  */

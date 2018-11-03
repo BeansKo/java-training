@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
+ * 第二个
  * 字节流学习
  * 	FileInputStream(File file)
  * 		通过打开一个实际文件的连接来创建一个FileInputStream，该文件通过系统中的File对象file指定。
@@ -25,9 +26,8 @@ import java.io.IOException;
 public class IOInputStream {
 
 	public static void main(String[] args) {
-		try {
-			File file = new File("d:/wordcount-input.txt");
-			FileInputStream fis = new FileInputStream(file);
+		File file = new File("d:/wordcount-input.txt");
+		try (FileInputStream fis = new FileInputStream(file);){
 			int pos = fis.read();
 			System.out.println("读取的内容为："+(char)pos);
 			byte[] by = new byte[5];

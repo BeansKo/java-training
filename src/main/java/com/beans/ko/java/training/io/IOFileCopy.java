@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * 第五个
  * 文件复制 推荐使用字节流
  *	1.用字节输入流读取一个文件，读到内存
  *	2.用字节输出流把内存中的数据写入到文件
