@@ -82,7 +82,8 @@ public class StringXml {
 						doc, XPathConstants.NODESET);
 		System.out.println(list.getLength());
 		for(int i=0;i<list.getLength();i++){
-			System.out.println(list.item(i).getTextContent());
+			Element element = (Element)list.item(i);
+			System.out.println(element.getTextContent());
 		}
 	}
 }
