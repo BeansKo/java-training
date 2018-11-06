@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * 第四个
  * 流的关闭--低级流 void close() 可以实现关闭流
  *  在finaly语句中关闭资源--合理的关闭流 try catch 新特性 
  *  格式：

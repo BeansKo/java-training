@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * 第三个
  *  字节输出流
  *  注意：如果指定的输出文件没有存在，那么会创建一个指定的文件
  *  void write(int b) 将指定字节写入文件输出流

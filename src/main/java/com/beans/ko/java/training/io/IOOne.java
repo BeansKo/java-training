@@ -1,6 +1,7 @@
 package com.beans.ko.java.training.io;
 
 /**
+ * 第一个
  * IO
  * 程序存储在磁盘，程序运行在内存
  * 程序在运行的时候可能会从磁盘请求数据，访问磁盘

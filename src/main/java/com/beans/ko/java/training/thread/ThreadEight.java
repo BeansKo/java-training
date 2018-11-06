@@ -11,7 +11,7 @@ public class ThreadEight {
 		RunableEight run = new RunableEight();
 		Thread th1 = new Thread(run,"aa");
 		Thread th2 = new Thread(run,"bb");
-//		th1.setPriority(5);
+//		th1.setPriority(10);
 //		th2.setPriority(5);
 		th1.start();
 		th2.start();
