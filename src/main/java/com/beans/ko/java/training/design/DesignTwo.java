@@ -26,7 +26,7 @@ class Student{
 		return student;
 	}
 	
-	public static void show(){
+	public void show(){
 		System.out.println("show()");
 	}
 }
