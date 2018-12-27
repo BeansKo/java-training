@@ -22,7 +22,9 @@ class Animal{
 	}
 	
 	String name;
-	private Animal(){System.out.println("new Animal()");}
+	private Animal(){
+		System.out.println("new Animal()");
+	}
 	public void show(){
 		System.out.println("show()");
 	}
