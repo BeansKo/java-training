@@ -3,8 +3,6 @@ package com.beans.ko.java.training.reflect.constructor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import org.junit.Test;
-
 /**
  * 反射获取和操作构造器
  */
@@ -18,7 +16,7 @@ public class ReflectConstructor {
 				.forName("com.beans.ko.java.training.reflect.constructor.Student");
 		// 获得构造器
 		// 获得单个公开的构造器
-		Constructor constructor = clazz.getConstructor(null);
+		Constructor<?> constructor = clazz.getConstructor(null);
 		System.out.println(constructor);
 		// 获得所有的公共构造方法 不包含父类的 如何得到父类的，先获得父类的类对象，然后再获得
 		Constructor[] constructors = clazz.getConstructors();
@@ -40,7 +38,6 @@ public class ReflectConstructor {
 		useConstructor();
 	}
 
-	@Test
 	private static void useConstructor() throws ClassNotFoundException,
 			NoSuchMethodException, SecurityException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException,

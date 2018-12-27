@@ -40,8 +40,72 @@
 	    <groupId>log4j</groupId>
 	    <artifactId>log4j</artifactId>
 	    <version>1.2.17</version>
-	</dependency>
-	
-	
+	</dependency>	
   </dependencies>
+  <build>
+  	<defaultGoal>package</defaultGoal>
+  	<finalName>${artifactId}-${version}</finalName>
+  	<directory>${basedir}/target</directory>
+  	<resources></resources>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<!-- 这种方式不会把依赖包打进去 -->
+  			<artifactId>maven-jar-plugin</artifactId>
+  			<configuration>
+  				<archive>
+  					<addMavenDescriptor>false</addMavenDescriptor>
+  					<manifest>
+  					  	<!-- 是否要把第三方jar放到manifest的classpath中 -->  
+  						<addClasspath>true</addClasspath>
+  						<!-- 生成的manifest中classpath的前缀，因为要把第三方jar放到lib目录下，所以classpath的前缀是lib/ --> 
+  						<classpathPrefix>lib/</classpathPrefix>
+  						<mainClass>com.beans.ko.java.training.App</mainClass>
+  					</manifest>
+  				</archive>
+  				<excludes>
+  					<exclude>bin/</exclude>
+  					<exclude>log4j.properties</exclude>
+  					<exclude>application.properties</exclude>
+  				</excludes>
+  			</configuration>
+  		</plugin>
+  		<!-- 拷贝依赖的jar包到lib目录 -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>copy</id>
+					<phase>package</phase>
+					<goals>
+						<goal>copy-dependencies</goal>
+					</goals>
+					<configuration>
+						<includeScope>runtime</includeScope>
+						<outputDirectory>${project.build.directory}/lib</outputDirectory>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-assembly-plugin</artifactId>
+			<configuration>
+				<descriptors>
+					<descriptor>package.xml</descriptor>
+				</descriptors>
+			</configuration>
+			<executions>
+			<execution>
+					<id>make-assembly</id>
+					<phase>package</phase>
+					<goals>
+						<goal>single</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+  	</plugins>
+  </build>
 </project>
