@@ -17,7 +17,7 @@ import com.beans.ko.java.training.entity.ShouJi;
  * @author fl76
  *
  */
-public class HashSetDemo {
+public class SetDemo {
 
 	public static void main(String[] args) {
 		DoHashSet();
