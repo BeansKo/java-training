@@ -38,8 +38,13 @@ public class SetDemo {
 		
 		Iterator<ShouJi> it = set.iterator();
 		while(it.hasNext()){
-			System.out.println(it.next().toString());
+			ShouJi shouji = it.next();
+			if(shouji.getName().equals("cc")){
+				it.remove();
+			}
+			System.out.println(shouji.toString());
 		}
+		System.out.println(set);
 	}
 	
 	private static void DoLinkedHashSet(){
