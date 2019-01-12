@@ -2,7 +2,6 @@ package com.beans.ko.java.training.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -42,6 +41,7 @@ public class ListDemo {
 		for(int i=0;i<size;i++){
 			System.out.println(list.get(i));
 		}
+		list.stream().forEach((car) -> {System.out.println(car);});
 	}
 	
 	private static void DoVector() {

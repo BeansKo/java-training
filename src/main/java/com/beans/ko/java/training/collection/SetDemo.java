@@ -3,9 +3,11 @@ package com.beans.ko.java.training.collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import com.beans.ko.java.training.entity.ShouJi;
 
@@ -39,11 +41,15 @@ public class SetDemo {
 		Iterator<ShouJi> it = set.iterator();
 		while(it.hasNext()){
 			ShouJi shouji = it.next();
+			//删除元素
 			if(shouji.getName().equals("cc")){
 				it.remove();
 			}
 			System.out.println(shouji.toString());
 		}
+		
+		List<String> list = set.stream().map(ShouJi::getName).collect(Collectors.toList());
+		list.forEach((s) -> System.out.println(s));
 		System.out.println(set);
 	}
 	
