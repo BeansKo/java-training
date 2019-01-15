@@ -13,12 +13,14 @@ import java.io.IOException;
 /**
  * 第九个
  * 缓冲流学习
+ * 字节缓冲流
  * BufferedInputStream
  * BufferedOutputStream
  * 
  * 特性：
  * 	内部会有一个自制的缓冲区，为了解决每次一个一个的读取和写入的问题，提高了效率
  * 	缓冲流是高级流，是处理流，高级流必须套接一个低级流才能构建对象
+ * 
  * 
  * BufferedReader
  * BufferedWriter
@@ -57,6 +59,9 @@ public class IOBuffer {
 		}
 	}
 	
+	/*
+	 * 字符缓冲流
+	 */
 	private static void fielBuffer(){
 		try(FileReader fr = new FileReader("d:/aa.txt");
 				BufferedReader br = new BufferedReader(fr);
