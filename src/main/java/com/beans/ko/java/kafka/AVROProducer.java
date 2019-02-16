@@ -10,6 +10,9 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.ByteArraySerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import com.beans.ko.java.kafka.util.JsonUtil;
+import com.beans.ko.java.kafka.util.AvroUtil;
+
 public class AVROProducer {
 	
 	public static void main(String[] args) {
@@ -43,10 +46,10 @@ public class AVROProducer {
 	    props.put("value.serializer", ByteArraySerializer.class);
 	    
 		try(Producer<String, byte[]> producer = new KafkaProducer<String, byte[]>(props)){
-			GenericRecord genericRecord = new GenericRecordBuilder(SerializeTool.getSchema(KafKaConstant.AVRO_SCHEMA))
-				.set("date", System.currentTimeMillis()+"").set("message", SerializeTool.generationJsonMessage().toJSONString()).build();
+			GenericRecord genericRecord = new GenericRecordBuilder(AvroUtil.getSchema(KafKaConstant.AVRO_SCHEMA))
+				.set("date", System.currentTimeMillis()+"").set("message", JsonUtil.generationJsonMessage().toJSONString()).build();
 			ProducerRecord<String, byte[]> producerRecord = new ProducerRecord<String, byte[]>(topicName, 
-					SerializeTool.serialize(genericRecord, SerializeTool.getSchema(KafKaConstant.AVRO_SCHEMA)));
+					AvroUtil.serialize(genericRecord, AvroUtil.getSchema(KafKaConstant.AVRO_SCHEMA)));
 			producer.send(producerRecord);
 		}
 	}

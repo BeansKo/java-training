@@ -11,6 +11,8 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.ByteArrayDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+import com.beans.ko.java.kafka.util.AvroUtil;
+
 public class AVROConsumer {
 
 	public static void main(String[] args) {
@@ -40,7 +42,7 @@ public class AVROConsumer {
         	consumer.subscribe(Arrays.asList(topic.split(",")));
         	ConsumerRecords<String, byte[]> records = consumer.poll(10000);
         	for (final ConsumerRecord<String,byte[]> record : records){
-        		GenericRecord genericRecord = SerializeTool.deserialize(record.value(), SerializeTool.getSchema(KafKaConstant.AVRO_SCHEMA));
+        		GenericRecord genericRecord = AvroUtil.deserialize(record.value(), AvroUtil.getSchema(KafKaConstant.AVRO_SCHEMA));
         		System.out.println(record.key()+"============="+genericRecord.get("date"));
         		System.out.println(record.key()+"============="+genericRecord.get("message"));
         	}

@@ -8,6 +8,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import com.alibaba.fastjson.JSONObject;
+import com.beans.ko.java.kafka.util.JsonUtil;
 
 public class JSONProducer {
 
@@ -37,7 +38,7 @@ public class JSONProducer {
         props.put("value.serializer", StringSerializer.class);
         
 		try(Producer<String, String> producer = new KafkaProducer<String, String>(props)){
-			JSONObject message = SerializeTool.generationJsonMessage();
+			JSONObject message = JsonUtil.generationJsonMessage();
 			/*构建record
 			 * topicName：写入的topic名称；(String) 
 			 * message.get("ItemNumber")：record的主键key，可以为null

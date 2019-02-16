@@ -1,4 +1,4 @@
-package com.beans.ko.java.kafka;
+package com.beans.ko.java.kafka.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -16,26 +16,7 @@ import org.apache.avro.specific.SpecificDatumReader;
 
 import com.alibaba.fastjson.JSONObject;
 
-public class SerializeTool {
-
-	/**
-	 * 构建JSON数据
-	 * 
-	 * @return
-	 */
-	static JSONObject generationJsonMessage() {
-		JSONObject message = new JSONObject();
-		JSONObject data = new JSONObject();
-		data.put("Item", "9SIAAW16DK5512");
-		data.put("LanguageCode", "zh-cn");
-		data.put("AvailableQty", "100");
-
-		message.put("ItemNumber", "9SIAAW16DK5512");
-		message.put("data", data);
-
-		return message;
-	}
-
+public class AvroUtil {
 
 	public static Schema getSchema(String schema) {
 		return new Schema.Parser().parse(schema);
