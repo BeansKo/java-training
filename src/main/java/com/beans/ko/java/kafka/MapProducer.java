@@ -1,0 +1,50 @@
+package com.beans.ko.java.kafka;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringSerializer;
+
+import com.beans.ko.java.kafka.util.ObjectSerializer;
+
+public class MapProducer {
+
+	public static void main(String[] args) {
+		String bootstrapServer = "10.16.238.101:8092,10.16.238.102:8092";
+		String topic = "test_map";
+		new Thread(()->{
+			MapProducer producer = new MapProducer();
+			producer.produceJsonMessage(topic,bootstrapServer);
+		}).start();
+	}
+	
+	/**
+	 * 生产Object格式的数据
+	 * @param topicName
+	 * @param bootstrapServer
+	 */
+	public void produceJsonMessage(String topicName,String bootstrapServer){
+		Properties props = new Properties();
+		props.put("bootstrap.servers", bootstrapServer);
+        props.put("acks", "all");
+        props.put("retries", 0);
+        props.put("batch.size", 16384);
+        props.put("linger.ms", 1);
+        props.put("buffer.memory", 33554432);
+        props.put("key.serializer", StringSerializer.class);
+        props.put("value.serializer", ObjectSerializer.class);
+        
+		try(Producer<String, Object> producer = new KafkaProducer<String, Object>(props)){
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("ItemNumber", "9SIAAW16DK5512");
+			map.put("qty", "20");
+			map.put("size", "30");
+			ProducerRecord<String,Object> record = new ProducerRecord<String,Object>(topicName,map);
+			producer.send(record);
+		}
+	}
+}

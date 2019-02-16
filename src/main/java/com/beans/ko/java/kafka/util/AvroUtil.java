@@ -14,8 +14,6 @@ import org.apache.avro.io.Encoder;
 import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.specific.SpecificDatumReader;
 
-import com.alibaba.fastjson.JSONObject;
-
 public class AvroUtil {
 
 	public static Schema getSchema(String schema) {
