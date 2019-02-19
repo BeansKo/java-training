@@ -1,0 +1,88 @@
+DEBUG - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.16.238.101:8092 (id: -1 rack: null), 10.16.238.102:8092 (id: -2 rack: null)], partitions = [])
+DEBUG - Added sensor with name connections-closed:
+DEBUG - Added sensor with name connections-created:
+DEBUG - Added sensor with name bytes-sent-received:
+DEBUG - Added sensor with name bytes-sent:
+DEBUG - Added sensor with name bytes-received:
+DEBUG - Added sensor with name select-time:
+DEBUG - Added sensor with name io-time:
+DEBUG - Added sensor with name heartbeat-latency
+DEBUG - Added sensor with name join-latency
+DEBUG - Added sensor with name sync-latency
+DEBUG - Added sensor with name commit-latency
+DEBUG - Added sensor with name bytes-fetched
+DEBUG - Added sensor with name records-fetched
+DEBUG - Added sensor with name fetch-latency
+DEBUG - Added sensor with name records-lag
+DEBUG - Added sensor with name fetch-throttle-time
+WARN - The configuration 'rebalance.backoff.ms' was supplied but isn't a known config.
+WARN - The configuration 'rebalance.max.retries' was supplied but isn't a known config.
+WARN - The configuration 'auto.commit.enable' was supplied but isn't a known config.
+INFO - Kafka version : 0.10.2.0
+INFO - Kafka commitId : 576d93a8dc0cf421
+DEBUG - Kafka consumer created
+DEBUG - Subscribed to topic(s): test_map
+DEBUG - Sending GroupCoordinator request for group test_group_map1 to broker 10.16.238.102:8092 (id: -2 rack: null)
+DEBUG - Initiating connection to node -2 at 10.16.238.102:8092.
+DEBUG - Added sensor with name node--2.bytes-sent
+DEBUG - Added sensor with name node--2.bytes-received
+DEBUG - Added sensor with name node--2.latency
+DEBUG - Created socket with SO_RCVBUF = 65536, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -2
+DEBUG - Completed connection to node -2.  Fetching API versions.
+DEBUG - Initiating API versions fetch from node -2.
+DEBUG - Initialize connection to node -1 for sending metadata request
+DEBUG - Initiating connection to node -1 at 10.16.238.101:8092.
+DEBUG - Added sensor with name node--1.bytes-sent
+DEBUG - Added sensor with name node--1.bytes-received
+DEBUG - Added sensor with name node--1.latency
+DEBUG - Created socket with SO_RCVBUF = 65536, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+DEBUG - Completed connection to node -1.  Fetching API versions.
+DEBUG - Initiating API versions fetch from node -1.
+DEBUG - Recorded API versions for node -2: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
+DEBUG - Sending metadata request (type=MetadataRequest, topics=test_map) to node -2
+DEBUG - Recorded API versions for node -1: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
+DEBUG - Updated cluster metadata version 2 to Cluster(id = liXLhjQRRcyhP4UKhp3nBw, nodes = [10.16.238.102:8092 (id: 1 rack: null), 10.16.238.103:8092 (id: 2 rack: null), 10.16.238.104:8092 (id: 3 rack: null), 10.16.238.101:8092 (id: 0 rack: null)], partitions = [Partition(topic = test_map, partition = 0, leader = 1, replicas = [1], isr = [1])])
+DEBUG - Received GroupCoordinator response ClientResponse(receivedTimeMs=1550301707236, latencyMs=73, disconnected=false, requestHeader={api_key=10,api_version=0,correlation_id=0,client_id=consumer-1}, responseBody={error_code=0,coordinator={node_id=2,host=10.16.238.103,port=8092}}) for group test_group_map1
+INFO - Discovered coordinator 10.16.238.103:8092 (id: 2147483645 rack: null) for group test_group_map1.
+DEBUG - Initiating connection to node 2147483645 at 10.16.238.103:8092.
+DEBUG - Sending synchronous auto-commit of offsets {} for group test_group_map1
+DEBUG - Heartbeat thread for group test_group_map1 started
+INFO - Revoking previously assigned partitions [] for group test_group_map1
+INFO - (Re-)joining group test_group_map1
+DEBUG - Sending JoinGroup ((type: JoinGroupRequest, groupId=test_group_map1, sessionTimeout=10000, rebalanceTimeout=300000, memberId=, protocolType=consumer, groupProtocols=org.apache.kafka.common.requests.JoinGroupRequest$ProtocolMetadata@6288d88)) to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null)
+DEBUG - Added sensor with name node-2147483645.bytes-sent
+DEBUG - Added sensor with name node-2147483645.bytes-received
+DEBUG - Added sensor with name node-2147483645.latency
+DEBUG - Created socket with SO_RCVBUF = 65536, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 2147483645
+DEBUG - Completed connection to node 2147483645.  Fetching API versions.
+DEBUG - Initiating API versions fetch from node 2147483645.
+DEBUG - Recorded API versions for node 2147483645: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
+DEBUG - Received successful JoinGroup response for group test_group_map1: {error_code=0,generation_id=3,group_protocol=range,leader_id=consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb,member_id=consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb,members=[{member_id=consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb,member_metadata=java.nio.HeapByteBuffer[pos=0 lim=20 cap=20]}]}
+DEBUG - Performing assignment for group test_group_map1 using strategy range with subscriptions {consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb=Subscription(topics=[test_map])}
+DEBUG - Finished assignment for group test_group_map1: {consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb=Assignment(partitions=[test_map-0])}
+DEBUG - Sending leader SyncGroup for group test_group_map1 to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null): (type=SyncGroupRequest, groupId=test_group_map1, generationId=3, memberId=consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb, groupAssignment=consumer-1-b271fa1b-69e6-4ab5-b6a5-58bf663f44fb)
+INFO - Successfully joined group test_group_map1 with generation 3
+INFO - Setting newly assigned partitions [test_map-0] for group test_group_map1
+DEBUG - Group test_group_map1 fetching committed offsets for partitions: [test_map-0]
+DEBUG - Resetting offset for partition test_map-0 to the committed offset 1
+DEBUG - Sending fetch for partitions [test_map-0] to broker 10.16.238.102:8092 (id: 1 rack: null)
+DEBUG - Initiating connection to node 1 at 10.16.238.102:8092.
+DEBUG - Added sensor with name node-1.bytes-sent
+DEBUG - Added sensor with name node-1.bytes-received
+DEBUG - Added sensor with name node-1.latency
+DEBUG - Created socket with SO_RCVBUF = 65536, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 1
+DEBUG - Completed connection to node 1.  Fetching API versions.
+DEBUG - Initiating API versions fetch from node 1.
+DEBUG - Recorded API versions for node 1: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
+DEBUG - Added sensor with name topic.test_map.bytes-fetched
+DEBUG - Added sensor with name topic.test_map.records-fetched
+DEBUG - Added sensor with name test_map-0.records-lag
+DEBUG - Ignoring fetched records for test_map-0 at offset 1 since the current position is 2
+DEBUG - Sending fetch for partitions [test_map-0] to broker 10.16.238.102:8092 (id: 1 rack: null)
+DEBUG - Sending Heartbeat request for group test_group_map1 to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null)
+DEBUG - Received successful Heartbeat response for group test_group_map1
+DEBUG - Sending Heartbeat request for group test_group_map1 to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null)
+DEBUG - Received successful Heartbeat response for group test_group_map1
+DEBUG - Sending Heartbeat request for group test_group_map1 to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null)
+DEBUG - Received successful Heartbeat response for group test_group_map1
+DEBUG - Sending Heartbeat request for group test_group_map1 to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null)
