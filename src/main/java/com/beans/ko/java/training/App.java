@@ -14,5 +14,11 @@ public class App {
 		System.out.println(app.clazz);
 		System.out.println(UUID.randomUUID().toString().replaceAll("-", ""));
 		System.out.println(Thread.currentThread().getContextClassLoader().getResource(""));
+		
+		
+		Integer i = null;
+		String str = String.valueOf(i.intValue());
+		System.out.println(str);
+//		String str1 = Integer.toString(i);
 	}
 }
