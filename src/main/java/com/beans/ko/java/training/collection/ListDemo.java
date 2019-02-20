@@ -2,6 +2,7 @@ package com.beans.ko.java.training.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -52,8 +53,19 @@ public class ListDemo {
 		list.add(new ShouJi("4","dd"));
 		list.add(new ShouJi("4","dd"));
 		list.add(new ShouJi("c","dd"));
-		//使用collections进行排序，要求排序类要实现Comparable接口，如果没有实现接口可以使用
+		//使用collections进行排序，要求排序类要实现Comparable接口，如果没有实现接口可以使用外部比较器
 		Collections.sort(list);
+		Comparator<ShouJi> c = (t1,t2) -> {
+			if (Integer.parseInt(t1.getId())>Integer.parseInt(t2.getId())){
+				return 1;
+			} else if (Integer.parseInt(t1.getId()) == Integer.parseInt(t2.getId())){
+				return 0;
+			} else {
+				return -1;
+			}
+		};
+		Collections.sort(list, c);
+		
 		list.add(null);
 		
 		//list的遍历，使用索引的情况效率是最高的
