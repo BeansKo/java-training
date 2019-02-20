@@ -28,6 +28,10 @@ public class MainApp {
 			System.out.println("V:"+v);
 		});
 		
+		LocalStrage.forEach(keyspaces, (r) -> {
+			r.getData().forEach((k,v) -> {System.out.println("k1:"+k+",v1:"+v);});
+		});
+		
 		//关闭keyspace
 		LocalStrage.close(keyspaces);
 	}
