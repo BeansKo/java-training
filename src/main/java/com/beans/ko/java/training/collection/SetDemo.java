@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import com.beans.ko.java.training.entity.ShouJi;
 
 /**
- * Set:不允许重负
+ * Set:不允许重复
  * HashSet：存储数据时无序的
  * LinkedHashSet:存储数据，会保持写入顺序
  * TreeSet:存储数据，指定比较规则，进行排序
