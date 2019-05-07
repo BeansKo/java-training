@@ -15,6 +15,7 @@ public class QuickMapProducer {
 
 	public static void main(String[] args) {
 		String bootstrapServer = "10.16.238.101:8092,10.16.238.102:8092";
+		//用于ShippingCharge测试
 		String topic = "EC_ShippingCharge_Data";
 		new Thread(()->{
 			QuickMapProducer producer = new QuickMapProducer();
@@ -23,7 +24,7 @@ public class QuickMapProducer {
 	}
 	
 	/**
-	 * 生产Object格式的数据
+	 * 生产QckMapu格式的数据
 	 * @param topicName
 	 * @param bootstrapServer
 	 */

@@ -1,10 +1,22 @@
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.records-per-batch
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.bytes
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.compression-rate
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.record-retries
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.record-errors
-INFO - Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
-DEBUG - Beginning shutdown of Kafka producer I/O thread, sending remaining records.
+DEBUG - Sending fetch for partitions [EC_ShippingCharge_Data-0] to broker 10.16.238.101:8092 (id: 0 rack: null)
+DEBUG - Sending fetch for partitions [EC_ShippingCharge_Data-0] to broker 10.16.238.101:8092 (id: 0 rack: null)
+DEBUG - Sending asynchronous auto-commit of offsets {EC_ShippingCharge_Data-0=OffsetAndMetadata{offset=40000, metadata=''}} for group test_group_map1
+DEBUG - Group test_group_map1 committed offset 40000 for partition EC_ShippingCharge_Data-0
+DEBUG - Completed auto-commit of offsets {EC_ShippingCharge_Data-0=OffsetAndMetadata{offset=40000, metadata=''}} for group test_group_map1
+DEBUG - Sending fetch for partitions [EC_ShippingCharge_Data-0] to broker 10.16.238.101:8092 (id: 0 rack: null)
+DEBUG - Sending fetch for partitions [EC_ShippingCharge_Data-0] to broker 10.16.238.101:8092 (id: 0 rack: null)
+DEBUG - Sending Heartbeat request for group test_group_map1 to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null)
+DEBUG - Sending asynchronous auto-commit of offsets {EC_ShippingCharge_Data-0=OffsetAndMetadata{offset=40000, metadata=''}} for group test_group_map1
+DEBUG - Received successful Heartbeat response for group test_group_map1
+DEBUG - Group test_group_map1 committed offset 40000 for partition EC_ShippingCharge_Data-0
+DEBUG - Completed auto-commit of offsets {EC_ShippingCharge_Data-0=OffsetAndMetadata{offset=40000, metadata=''}} for group test_group_map1
+DEBUG - Sending fetch for partitions [EC_ShippingCharge_Data-0] to broker 10.16.238.101:8092 (id: 0 rack: null)
+DEBUG - Sending fetch for partitions [EC_ShippingCharge_Data-0] to broker 10.16.238.101:8092 (id: 0 rack: null)
+DEBUG - Sending synchronous auto-commit of offsets {EC_ShippingCharge_Data-0=OffsetAndMetadata{offset=40000, metadata=''}} for group test_group_map1
+DEBUG - Group test_group_map1 committed offset 40000 for partition EC_ShippingCharge_Data-0
+DEBUG - Sending LeaveGroup request to coordinator 10.16.238.103:8092 (id: 2147483645 rack: null) for group test_group_map1
+DEBUG - LeaveGroup request for group test_group_map1 returned successfully
+DEBUG - Heartbeat thread for group test_group_map1 has closed
 DEBUG - Removed sensor with name connections-closed:
 DEBUG - Removed sensor with name connections-created:
 DEBUG - Removed sensor with name bytes-sent-received:
@@ -18,11 +30,13 @@ DEBUG - Removed sensor with name node--2.latency
 DEBUG - Removed sensor with name node--1.bytes-sent
 DEBUG - Removed sensor with name node--1.bytes-received
 DEBUG - Removed sensor with name node--1.latency
+DEBUG - Removed sensor with name node-2147483645.bytes-sent
+DEBUG - Removed sensor with name node-2147483645.bytes-received
+DEBUG - Removed sensor with name node-2147483645.latency
 DEBUG - Removed sensor with name node-0.bytes-sent
 DEBUG - Removed sensor with name node-0.bytes-received
 DEBUG - Removed sensor with name node-0.latency
-DEBUG - Shutdown of Kafka producer I/O thread has completed.
-DEBUG - The Kafka producer has closed.
+DEBUG - The Kafka consumer has closed.
 INFO - ProducerConfig values: 
 	acks = all
 	batch.size = 16384
@@ -99,14 +113,6 @@ DEBUG - Starting Kafka producer I/O thread.
 INFO - Kafka version : 0.10.2.0
 INFO - Kafka commitId : 576d93a8dc0cf421
 DEBUG - Kafka producer started
-DEBUG - Initialize connection to node -1 for sending metadata request
-DEBUG - Initiating connection to node -1 at 10.16.238.101:8092.
-DEBUG - Added sensor with name node--1.bytes-sent
-DEBUG - Added sensor with name node--1.bytes-received
-DEBUG - Added sensor with name node--1.latency
-DEBUG - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
-DEBUG - Completed connection to node -1.  Fetching API versions.
-DEBUG - Initiating API versions fetch from node -1.
 DEBUG - Initialize connection to node -2 for sending metadata request
 DEBUG - Initiating connection to node -2 at 10.16.238.102:8092.
 DEBUG - Added sensor with name node--2.bytes-sent
@@ -115,10 +121,18 @@ DEBUG - Added sensor with name node--2.latency
 DEBUG - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -2
 DEBUG - Completed connection to node -2.  Fetching API versions.
 DEBUG - Initiating API versions fetch from node -2.
+DEBUG - Initialize connection to node -1 for sending metadata request
+DEBUG - Initiating connection to node -1 at 10.16.238.101:8092.
+DEBUG - Added sensor with name node--1.bytes-sent
+DEBUG - Added sensor with name node--1.bytes-received
+DEBUG - Added sensor with name node--1.latency
+DEBUG - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+DEBUG - Completed connection to node -1.  Fetching API versions.
+DEBUG - Initiating API versions fetch from node -1.
 DEBUG - Recorded API versions for node -2: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
 DEBUG - Sending metadata request (type=MetadataRequest, topics=EC_ShippingCharge_Data) to node -2
 DEBUG - Recorded API versions for node -1: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
-DEBUG - Updated cluster metadata version 2 to Cluster(id = liXLhjQRRcyhP4UKhp3nBw, nodes = [10.16.238.103:8092 (id: 2 rack: null), 10.16.238.104:8092 (id: 3 rack: null), 10.16.238.102:8092 (id: 1 rack: null), 10.16.238.101:8092 (id: 0 rack: null)], partitions = [Partition(topic = EC_ShippingCharge_Data, partition = 0, leader = 0, replicas = [0], isr = [0])])
+DEBUG - Updated cluster metadata version 2 to Cluster(id = liXLhjQRRcyhP4UKhp3nBw, nodes = [10.16.238.101:8092 (id: 0 rack: null), 10.16.238.104:8092 (id: 3 rack: null), 10.16.238.103:8092 (id: 2 rack: null), 10.16.238.102:8092 (id: 1 rack: null)], partitions = [Partition(topic = EC_ShippingCharge_Data, partition = 0, leader = 0, replicas = [0], isr = [0])])
 DEBUG - Initiating connection to node 0 at 10.16.238.101:8092.
 DEBUG - Added sensor with name node-0.bytes-sent
 DEBUG - Added sensor with name node-0.bytes-received
@@ -127,81 +141,3 @@ DEBUG - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 
 DEBUG - Completed connection to node 0.  Fetching API versions.
 DEBUG - Initiating API versions fetch from node 0.
 DEBUG - Recorded API versions for node 0: (Produce(0): 0 to 2 [usable: 2], Fetch(1): 0 to 3 [usable: 3], Offsets(2): 0 to 1 [usable: 1], Metadata(3): 0 to 2 [usable: 2], LeaderAndIsr(4): 0 [usable: 0], StopReplica(5): 0 [usable: 0], UpdateMetadata(6): 0 to 3 [usable: 3], ControlledShutdown(7): 1 [usable: 1], OffsetCommit(8): 0 to 2 [usable: 2], OffsetFetch(9): 0 to 2 [usable: 2], GroupCoordinator(10): 0 [usable: 0], JoinGroup(11): 0 to 1 [usable: 1], Heartbeat(12): 0 [usable: 0], LeaveGroup(13): 0 [usable: 0], SyncGroup(14): 0 [usable: 0], DescribeGroups(15): 0 [usable: 0], ListGroups(16): 0 [usable: 0], SaslHandshake(17): 0 [usable: 0], ApiVersions(18): 0 [usable: 0], CreateTopics(19): 0 to 1 [usable: 1], DeleteTopics(20): 0 [usable: 0])
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.records-per-batch
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.bytes
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.compression-rate
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.record-retries
-DEBUG - Added sensor with name topic.EC_ShippingCharge_Data.record-errors
-INFO - Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
-DEBUG - Beginning shutdown of Kafka producer I/O thread, sending remaining records.
-DEBUG - Removed sensor with name connections-closed:
-DEBUG - Removed sensor with name connections-created:
-DEBUG - Removed sensor with name bytes-sent-received:
-DEBUG - Removed sensor with name bytes-sent:
-DEBUG - Removed sensor with name bytes-received:
-DEBUG - Removed sensor with name select-time:
-DEBUG - Removed sensor with name io-time:
-DEBUG - Removed sensor with name node--1.bytes-sent
-DEBUG - Removed sensor with name node--1.bytes-received
-DEBUG - Removed sensor with name node--1.latency
-DEBUG - Removed sensor with name node--2.bytes-sent
-DEBUG - Removed sensor with name node--2.bytes-received
-DEBUG - Removed sensor with name node--2.latency
-DEBUG - Removed sensor with name node-0.bytes-sent
-DEBUG - Removed sensor with name node-0.bytes-received
-DEBUG - Removed sensor with name node-0.latency
-DEBUG - Shutdown of Kafka producer I/O thread has completed.
-DEBUG - The Kafka producer has closed.
-INFO - ProducerConfig values: 
-	acks = all
-	batch.size = 16384
-	block.on.buffer.full = false
-	bootstrap.servers = [10.16.238.101:8092, 10.16.238.102:8092]
-	buffer.memory = 33554432
-	client.id = 
-	compression.type = none
-	connections.max.idle.ms = 540000
-	interceptor.classes = null
-	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
-	linger.ms = 1
-	max.block.ms = 60000
-	max.in.flight.requests.per.connection = 5
-	max.request.size = 1048576
-	metadata.fetch.timeout.ms = 60000
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.sample.window.ms = 30000
-	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
-	receive.buffer.bytes = 32768
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 0
-	retry.backoff.ms = 100
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.mechanism = GSSAPI
-	security.protocol = PLAINTEXT
-	send.buffer.bytes = 131072
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
-	ssl.endpoint.identification.algorithm = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLS
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	timeout.ms = 30000
-	value.serializer = class com.beans.ko.java.kafka.util.ObjectSerializer
-
